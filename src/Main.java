@@ -2,25 +2,80 @@ import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        System.out.println("I can recommend a book based on your age and favorite car brand.");
-        System.out.println("Please,write your age and your favorite car brand.");
-        Scanner in = new Scanner(System.in);
-        int n = in.nextInt();
-        int BMW = in.nextInt();
-        int Mercedes = in.nextInt();
-        int Audi = in.nextInt();
+        Scanner scanner = new Scanner(System.in);
 
-        if (n >= 18 && n <= 24) {
-            System.out.println("");
+        System.out.println("Hi, I can recommend a book based on your age and the genre of books you are interested in.");
+        System.out.println("May I know your name? ");
+        String name = scanner.nextLine();
+
+        System.out.println("How old are you, " + name + "? ");
+        int age = scanner.nextInt();
+
+        System.out.println("What is your favorite book genre? ");
+        scanner.nextLine();
+        String genre = scanner.nextLine();
+        recommendBook(age, genre, name);
+    }
+
+    public static void recommendBook(int age, String genre, String name) {
+        if (age >= 10 && age <= 18) {
+            if (genre.equalsIgnoreCase("detective")) {
+                System.out.println("Based on your answers, " + name + ", I recommend you the book named");
+                System.out.println("The Hound of the Baskervilles by Arthur Conan Doyle");
+            }
+        } else if (age >= 18 && age <= 44) {
+            if (genre.equalsIgnoreCase("non-fiction")) {
+                System.out.println("Based on your inputs, " + name + ", I recommend you the book named");
+                System.out.println("How Big Things Get Done by Bent Flyvbjerg");
+            }
+            else {
+                System.out.println("I'm sorry, " + name + ", I couldn't find a recommendation for the information you provided.. Please try again.");
+            }
         }
-        if (n >= 25 && n <= 38) {
-            System.out.println("");
+        if (age >= 18 && age <= 44) {
+            if (genre.equalsIgnoreCase("detective")) {
+                System.out.println("Based on your answers, " + name + ", I recommend you the book named");
+                System.out.println("Murder on the Orient Express by Agatha Christie");
+            }
+        } else if (age >= 10 && age <= 18) {
+            if (genre.equalsIgnoreCase("non-fiction")) {
+                System.out.println("Based on your inputs, " + name + ", I recommend you the book named");
+                System.out.println("In Cold Blood by Truman Capote");
+                        }
+            else {
+                System.out.println("I'm sorry, " + name + ", I couldn't find a recommendation for the information you provided.. Please try again.");
+            }
+                    }
+        if (age >= 45 && age <= 74) {
+            if (genre.equalsIgnoreCase("detective")) {
+                System.out.println("Based on your answers, " + name + ", I recommend you the book named");
+                System.out.println("The Maltese Falcon by Dashiell Hammett");
+            }
+        } else if (age >= 75) {
+            if (genre.equalsIgnoreCase("non-fiction")) {
+                System.out.println("Based on your inputs, " + name + ", I recommend you the book named ");
+                System.out.println("The Name of the Rose by Umberto Eco");
+            }
+            else {
+                System.out.println("I'm sorry, " + name + ", I couldn't find a recommendation for the information you provided.. Please try again.");
+            }
         }
-        if (n >= 25 && n <=37) {
-            System.out.println("");
-        }
-        if (n >= 37 && n <=60) {
-            System.out.println("");
+        if (age >= 75) {
+            if (genre.equalsIgnoreCase("detective")) {
+                System.out.println("Based on your answers, " + name + ", I recommend you the book named");
+                System.out.println("The Big Sleep by Raymond Chandler");
+            }
+        } else if (age >= 45 && age <= 74) {
+            if (genre.equalsIgnoreCase("non-fiction")) {
+                System.out.println("Based on your inputs, " + name + ", I recommend you the book named ");
+                System.out.println("In the Woods by Tana French");
+            }
+            else {
+                System.out.println("I'm sorry, " + name + ", I couldn't find a recommendation for the information you provided.. Please try again.");
+            }
         }
     }
 }
+
+
+
